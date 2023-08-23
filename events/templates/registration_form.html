@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Registration</title>
+</head>
+<body>
+    <h2>User Registration</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password1" required><br><br>
+        <label for="password">confirm Password:</label>
+        <input type="password" id="password" name="password2" required><br><br>
+        {{ form.password2.errors }}
+        
+        <label for="user_type">User Type:</label>
+        <select id="user_type" name="user_type" required>
+            <option value="participant">Participant</option>
+            
+            <option value="coordinator">Event Coordinator</option>
+        </select><br><br>
+        
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>
